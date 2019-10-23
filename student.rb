@@ -1,3 +1,5 @@
+# Create a Student class with introduction and favourite_number methods
+
 class Student
     attr_accessor :first_name, :last_name, :primary_phone_number
 
@@ -5,7 +7,7 @@ class Student
         puts "Hi #{target}, I am #{first_name}!"
     end
 
-    def favorite_number
+    def favourite_number
         7
     end
 end
@@ -13,4 +15,4 @@ end
 frank = Student.new
 frank.first_name = "Frank"
 frank.introduction("Katrina")
-puts "Frank's favorite number is #{frank.favorite_number}."
+puts "Frank's favorite number is #{frank.favourite_number}."
