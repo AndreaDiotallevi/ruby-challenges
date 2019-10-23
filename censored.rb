@@ -1,3 +1,5 @@
+# Create a procedure that takes each tweet, replace any banned phrase with the word "CENSORED" and "puts" it on the screen
+
 test_tweets = [
   "This president sucks",
   "I hate this Blank House!",
@@ -9,14 +11,14 @@ banned_phrases = ["sucks", "bad", "hate", "foolish", "danger to society"]
 
 corrected_tweets = []
 
-test_tweets.each_with_index do |tweet, i|
-  corrected_tweets.push(tweet.split)
-  tweet.split.each_with_index do |word, j|
-    if banned_phrases.include?(word)
-      corrected_tweets[i][j] = "CENSORED"
-    else
-      corrected_tweets[i][j] = word
+test_tweets.each do |tweet|
+  corrected_tweet = tweet
+  banned_phrases.each do |phrase|
+    if tweet.include? phrase
+      corrected_tweet = corrected_tweet.gsub phrase, "CENSORED"
     end
   end
-  puts corrected_tweets[i].join(" ")
+  corrected_tweets.push(corrected_tweet)
 end
+
+puts corrected_tweets
